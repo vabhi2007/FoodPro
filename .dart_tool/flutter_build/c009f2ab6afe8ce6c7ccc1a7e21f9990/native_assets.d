@@ -1,0 +1,1 @@
+ E:\\foodpro\\.dart_tool\\flutter_build\\c009f2ab6afe8ce6c7ccc1a7e21f9990\\native_assets.yaml: 

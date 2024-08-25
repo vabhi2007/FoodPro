@@ -108,6 +108,7 @@ flutter:
     - lib\assets\icons\pantry_filled.png
     - lib\assets\icons\search_bar.png
     - lib\assets\icons\circle_arrow.png
+    - lib\assets\icons\plus_circle.png
 
   
   fonts:

@@ -1,14 +1,16 @@
-// lib\features\barcode_scanner\presentation\screens\barcode_scanner_screen.dart
+// lib\features\home\presentation\screens\home_screen.dart
 
 import 'package:flutter/material.dart';
+import 'package:foodpro/app.dart';
 
 class BarcodeScannerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('This is the Barcode Scanner screen'),
-      ),
+      body: Center(
+          child: Column(
+        children: [Text("Barcode Screen")],
+      )),
     );
   }
 }

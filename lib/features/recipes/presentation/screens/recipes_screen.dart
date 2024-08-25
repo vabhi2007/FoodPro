@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 class RecipesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('This is the Recipes screen'),
-      ),
+          child: Column(
+        children: [Text("Recipes Screen")],
+      )),
     );
   }
 }

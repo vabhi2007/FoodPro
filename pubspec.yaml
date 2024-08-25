@@ -109,6 +109,7 @@ flutter:
     - lib\assets\icons\search_bar.png
     - lib\assets\icons\circle_arrow.png
     - lib\assets\icons\plus_circle.png
+    - lib\assets\icons\default_profile.png
 
   
   fonts:

@@ -34,11 +34,39 @@ class App extends ConsumerWidget {
       title: 'FoodPro',
       theme: AppTheme.lightTheme,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('FoodPro'),
-          backgroundColor:
-              Colors.transparent, // Makes the AppBar background transparent
-          centerTitle: true, // Centers the title if needed
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0), // Set the height of the AppBar
+          child: AppBar(
+            backgroundColor: Colors.transparent, // Transparent background
+            elevation: 0, // Remove shadow/elevation
+            centerTitle: true, // Center the title
+            title: const Text(
+              'FoodPro',
+              style: TextStyle(color: Colors.black), // Customize the title text
+            ),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.account_circle,
+                color: Colors.grey,
+                size: 24.0,
+              ), // User profile icon
+              onPressed: () {
+                // Handle profile icon tap
+              },
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.add_circle_outline,
+                  color: Colors.grey,
+                  size: 24.0,
+                ), // Add button
+                onPressed: () {
+                  // Handle add button tap
+                },
+              ),
+            ],
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

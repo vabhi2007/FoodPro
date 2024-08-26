@@ -4,7 +4,7 @@ import '../../../../app_provider.dart';
 
 class SearchBarTitle extends ConsumerWidget {
   final String title;
-  final Widget targetPage;
+  final int targetPage;
 
   SearchBarTitle({required this.title, required this.targetPage});
 
@@ -17,12 +17,12 @@ class SearchBarTitle extends ConsumerWidget {
           title,
           style: const TextStyle(
               fontFamily: 'Poppins',
-              fontSize: 16.0,
+              fontSize: 13.0,
               fontWeight: FontWeight.w400),
         ),
         IconButton(
           onPressed: () {
-            ref.read(selectedIndexProvider.notifier).state = 1;
+            ref.read(selectedIndexProvider.notifier).state = targetPage;
           },
           icon: Image.asset(
             'lib/assets/icons/circle_arrow.png',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodpro/app.dart';
+
+import 'package:foodpro/features/home/presentation/widgets/pantry_view_card.dart';
 import 'package:foodpro/features/home/presentation/widgets/recipe_list.dart';
-import 'package:foodpro/features/recipes/presentation/screens/recipes_screen.dart';
 
 import '../widgets/search_bar.dart';
 import '../widgets/search_bar_title.dart';
@@ -15,13 +15,20 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment:
               CrossAxisAlignment.start, // Align children to start
           children: [
-            SearchBarTitle(title: 'Your Recipes', targetPage: App()),
+            SearchBarTitle(title: 'Your Recipes', targetPage: 2),
             HomeSearchBar(
               prompt: "Search your Recipes",
             ),
             const SizedBox(
                 height: 16.0), // Add space between HomeSearchBar and RecipeList
             RecipeList(),
+            const SizedBox(height: 40.0),
+            HomeSearchBar(
+              prompt: "Search your Pantry",
+            ),
+            PantryViewCard(),
+            const SizedBox(height: 8.0),
+            SearchBarTitle(title: 'Your Nutrition', targetPage: 1),
           ],
         ),
       ),

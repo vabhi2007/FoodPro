@@ -112,6 +112,7 @@ flutter:
     - lib\assets\icons\default_profile.png
     - lib\assets\images\chicken_pasta.png
     - lib\assets\images\nachos.png
+    - lib\assets\images\pantry_image.png
 
   
   fonts:

@@ -34,8 +34,8 @@ class RecipeList extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: 120.0,
-                        height: 120.0,
+                        width: 130.0,
+                        height: 130.0,
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
@@ -48,12 +48,10 @@ class RecipeList extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 120.0,
-                        height: 120.0,
+                        width: 130.0,
+                        height: 130.0,
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(12.0),
-                            topRight: Radius.circular(12.0),
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                           ),
@@ -79,7 +77,9 @@ class RecipeList extends StatelessWidget {
                               recipe['name']!,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13,
                                 shadows: [
                                   Shadow(
                                     blurRadius: 4.0,

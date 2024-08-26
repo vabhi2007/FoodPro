@@ -9,13 +9,26 @@ class HomeSearchBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
-          color: Colors.orange[100], borderRadius: BorderRadius.circular(12.0)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: const Offset(0, 1),
+          ),
+        ],
+        color: const Color.fromARGB(255, 252, 233, 196),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(12.0), // Round top-left corner
+          topRight: Radius.circular(12.0), // Round top-right corner
+        ),
+      ),
       child: Row(
         children: [
           Image.asset(
             'lib/assets/icons/search_bar.png',
-            width: 24,
-            height: 24,
+            width: 18,
+            height: 18,
           ),
           const SizedBox(width: 8.0),
           Expanded(

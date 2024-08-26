@@ -47,7 +47,7 @@ class App extends ConsumerWidget {
             leading: IconButton(
               icon: const Icon(
                 Icons.account_circle,
-                color: Colors.grey,
+                color: Colors.black,
                 size: 24.0,
               ), // User profile icon
               onPressed: () {
@@ -58,7 +58,7 @@ class App extends ConsumerWidget {
               IconButton(
                 icon: const Icon(
                   Icons.add_circle_outline,
-                  color: Colors.grey,
+                  color: Colors.black,
                   size: 24.0,
                 ), // Add button
                 onPressed: () {

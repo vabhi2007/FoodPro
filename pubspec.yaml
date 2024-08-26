@@ -110,6 +110,8 @@ flutter:
     - lib\assets\icons\circle_arrow.png
     - lib\assets\icons\plus_circle.png
     - lib\assets\icons\default_profile.png
+    - lib\assets\images\chicken_pasta.png
+    - lib\assets\images\nachos.png
 
   
   fonts:

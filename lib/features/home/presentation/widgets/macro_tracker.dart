@@ -17,62 +17,65 @@ class MacroTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double size = 180.0;
     const double scale = 0.8;
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The image background
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
-            child: Image.asset(
-              imagePath,
-              width: size,
-              height: size,
-              fit: BoxFit.cover,
-            ),
-          ),
-          // Apply the blur effect only to the image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
-              child: Container(
-                width: size,
-                height: size,
-                color: Colors.black.withOpacity(0.2), // Optional dark overlay
-              ),
-            ),
-          ),
-          // Background circle
-          LayoutBuilder(
-            builder: (context, constraints) {
-              double circleSize = constraints.maxWidth * scale;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double size = constraints.maxWidth *
+            0.47; // Set the size to be half of the parent's width
 
-              return Container(
-                width: circleSize,
-                height: circleSize,
+        return Container(
+          width: size,
+          height: size,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: const Offset(0, 1),
+              ),
+            ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // The image background
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Image.asset(
+                  imagePath,
+                  width: size,
+                  height: size,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              // Apply the blur effect only to the image
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0.9, sigmaY: 0.9),
+                  child: Container(
+                    width: size,
+                    height: size,
+                    color:
+                        Colors.black.withOpacity(0.2), // Optional dark overlay
+                  ),
+                ),
+              ),
+              // Background circle
+              Container(
+                width: size * scale,
+                height: size * scale,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white
                       .withOpacity(0.7), // Background color and opacity
                 ),
-              );
-            },
-          ),
-          // Circular progress indicator
-          LayoutBuilder(
-            builder: (context, constraints) {
-              double circleSize = constraints.maxWidth * scale;
-
-              return CircularPercentIndicator(
-                radius: circleSize / 2,
+              ),
+              // Circular progress indicator
+              CircularPercentIndicator(
+                radius: (size * scale) / 2,
                 lineWidth: 6.0,
                 percent: macroCount / macroGoal, // Dynamic value
 
@@ -101,11 +104,11 @@ class MacroTracker extends StatelessWidget {
                     ),
                   ],
                 ),
-              );
-            },
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

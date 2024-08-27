@@ -14,15 +14,23 @@ class PantryViewCard extends ConsumerWidget {
           child: Container(
             width: double.infinity,
             height: 150.0,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(12.0),
                 bottomRight: Radius.circular(12.0),
               ),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage('lib/assets/images/pantry_image.png'),
                 fit: BoxFit.cover,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: const Offset(0, 1),
+                ),
+              ],
             ),
             child: Stack(
               children: [

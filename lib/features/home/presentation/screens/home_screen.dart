@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpro/features/home/presentation/widgets/macro_tracker.dart';
 
 import 'package:foodpro/features/home/presentation/widgets/pantry_view_card.dart';
 import 'package:foodpro/features/home/presentation/widgets/recipe_list.dart';
@@ -22,13 +23,18 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
                 height: 16.0), // Add space between HomeSearchBar and RecipeList
             RecipeList(),
-            const SizedBox(height: 40.0),
+            const SizedBox(height: 32.0),
             HomeSearchBar(
               prompt: "Search your Pantry",
             ),
             PantryViewCard(),
-            const SizedBox(height: 8.0),
+            //const SizedBox(height: 8.0),
             SearchBarTitle(title: 'Your Nutrition', targetPage: 1),
+            MacroTracker(
+                macroTitle: 'Calories',
+                macroCount: 2350,
+                macroGoal: 2800,
+                imagePath: 'lib/assets/images/all_foods.png')
           ],
         ),
       ),

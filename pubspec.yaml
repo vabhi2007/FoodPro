@@ -114,6 +114,7 @@ flutter:
     - lib\assets\images\nachos.png
     - lib\assets\images\pantry_image.png
     - lib\assets\images\all_foods.png
+    - lib\assets\images\protein.png
 
   
   fonts:

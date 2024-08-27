@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodpro/features/home/presentation/widgets/macro_tracker.dart';
+import 'package:foodpro/features/home/presentation/widgets/mini_macro_tracker.dart';
 
 import 'package:foodpro/features/home/presentation/widgets/pantry_view_card.dart';
 import 'package:foodpro/features/home/presentation/widgets/recipe_list.dart';
@@ -28,13 +29,48 @@ class HomeScreen extends StatelessWidget {
               prompt: "Search your Pantry",
             ),
             PantryViewCard(),
-            //const SizedBox(height: 8.0),
             SearchBarTitle(title: 'Your Nutrition', targetPage: 1),
-            MacroTracker(
-                macroTitle: 'Calories',
-                macroCount: 2350,
-                macroGoal: 2800,
-                imagePath: 'lib/assets/images/all_foods.png')
+
+            // Row with the Big MacroTracker and a Column of MiniMacroTrackers
+            Row(
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceEvenly, // Align items evenly
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Big MacroTracker
+                MacroTracker(
+                  macroTitle: 'Calories',
+                  macroCount: 2350,
+                  macroGoal: 2800,
+                  imagePath: 'lib/assets/images/all_foods.png',
+                ),
+                // Column of MiniMacroTrackers
+                Column(
+                  children: [
+                    MiniMacroTracker(
+                      macroTitle: 'Protein',
+                      macroCount: 85,
+                      macroGoal: 110,
+                      imagePath: 'lib/assets/images/protein.png',
+                    ),
+                    const SizedBox(height: 8.0), // Space between mini trackers
+                    MiniMacroTracker(
+                      macroTitle: 'Carbs',
+                      macroCount: 200,
+                      macroGoal: 300,
+                      imagePath: 'lib/assets/images/protein.png',
+                    ),
+                    const SizedBox(height: 8.0), // Space between mini trackers
+                    MiniMacroTracker(
+                      macroTitle: 'Fats',
+                      macroCount: 70,
+                      macroGoal: 90,
+                      imagePath: 'lib/assets/images/protein.png',
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),

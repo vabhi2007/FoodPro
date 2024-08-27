@@ -19,12 +19,11 @@ class MiniMacroTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        double maxWidth =
-            constraints.maxWidth; // Get the max width of the parent container
+        double maxWidth = constraints.maxWidth * 0.9;
 
         return Container(
           width: maxWidth, // Use the full width of the parent container
-          height: 60.0, // Fixed height
+          height: 40, // Fixed height
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
             image: DecorationImage(
@@ -38,7 +37,7 @@ class MiniMacroTracker extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                  filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
                   child: Container(
                     width: maxWidth, // Match the full width of the parent
                     height: 60.0, // Match the fixed height

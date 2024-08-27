@@ -35,9 +35,8 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment:
                   MainAxisAlignment.spaceEvenly, // Align items evenly
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                // Big MacroTracker
                 MacroTracker(
                   macroTitle: 'Calories',
                   macroCount: 2350,
@@ -45,29 +44,35 @@ class HomeScreen extends StatelessWidget {
                   imagePath: 'lib/assets/images/all_foods.png',
                 ),
                 // Column of MiniMacroTrackers
-                Column(
-                  children: [
-                    MiniMacroTracker(
-                      macroTitle: 'Protein',
-                      macroCount: 85,
-                      macroGoal: 110,
-                      imagePath: 'lib/assets/images/protein.png',
-                    ),
-                    const SizedBox(height: 8.0), // Space between mini trackers
-                    MiniMacroTracker(
-                      macroTitle: 'Carbs',
-                      macroCount: 200,
-                      macroGoal: 300,
-                      imagePath: 'lib/assets/images/protein.png',
-                    ),
-                    const SizedBox(height: 8.0), // Space between mini trackers
-                    MiniMacroTracker(
-                      macroTitle: 'Fats',
-                      macroCount: 70,
-                      macroGoal: 90,
-                      imagePath: 'lib/assets/images/protein.png',
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      MiniMacroTracker(
+                        macroTitle: 'Protein',
+                        macroCount: 85,
+                        macroGoal: 110,
+                        imagePath: 'lib/assets/images/protein.png',
+                      ),
+                      const SizedBox(
+                          height: 8.0), // Space between mini trackers
+                      MiniMacroTracker(
+                        macroTitle: 'Carbs',
+                        macroCount: 200,
+                        macroGoal: 300,
+                        imagePath: 'lib/assets/images/carbs.png',
+                      ),
+                      const SizedBox(
+                          height: 8.0), // Space between mini trackers
+                      MiniMacroTracker(
+                        macroTitle: 'Fats',
+                        macroCount: 70,
+                        macroGoal: 90,
+                        imagePath: 'lib/assets/images/fats.png',
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

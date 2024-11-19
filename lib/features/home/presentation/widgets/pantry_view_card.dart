@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app_provider.dart';
 
 class PantryViewCard extends ConsumerWidget {
+  const PantryViewCard({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(

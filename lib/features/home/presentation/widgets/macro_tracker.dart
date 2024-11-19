@@ -7,23 +7,28 @@ class MacroTracker extends StatelessWidget {
   final int macroCount;
   final int macroGoal;
   final String imagePath;
+  final double size;
 
-  MacroTracker({
-    required this.macroTitle,
-    required this.macroCount,
-    required this.macroGoal,
-    required this.imagePath,
-  });
+  const MacroTracker(
+      {super.key,
+      required this.macroTitle,
+      required this.macroCount,
+      required this.macroGoal,
+      required this.imagePath,
+      required this.size});
 
   @override
   Widget build(BuildContext context) {
     const double scale = 0.8;
-    const double size = 180;
     return Container(
       width: size,
       height: size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.0),
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(12.0),
+            bottomLeft: Radius.circular(12.0),
+            topRight: Radius.circular(12.0),
+            bottomRight: Radius.circular(12.0)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
@@ -38,7 +43,11 @@ class MacroTracker extends StatelessWidget {
         children: [
           // The image background
           ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12.0),
+                bottomLeft: Radius.circular(12.0),
+                topRight: Radius.circular(12.0),
+                bottomRight: Radius.circular(12.0)),
             child: Image.asset(
               imagePath,
               width: size,
@@ -50,11 +59,11 @@ class MacroTracker extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 0.9, sigmaY: 0.9),
+              filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
               child: Container(
                 width: size,
                 height: size,
-                color: Colors.black.withOpacity(0.2), // Optional dark overlay
+                color: Colors.black.withOpacity(0.3), // Optional dark overlay
               ),
             ),
           ),
@@ -65,7 +74,7 @@ class MacroTracker extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color:
-                  Colors.white.withOpacity(0.7), // Background color and opacity
+                  Colors.white.withOpacity(0.8), // Background color and opacity
             ),
           ),
           // Circular progress indicator
@@ -84,8 +93,8 @@ class MacroTracker extends StatelessWidget {
                   style: const TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromARGB(200, 0, 0, 0),
                   ),
                 ),
                 Text(
@@ -93,8 +102,8 @@ class MacroTracker extends StatelessWidget {
                   style: const TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromARGB(200, 0, 0, 0),
                   ),
                 ),
               ],

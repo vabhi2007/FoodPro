@@ -16,6 +16,8 @@ import 'features/barcode_scanner/presentation/screens/barcode_scanner_screen.dar
 import 'core/utils/app_theme.dart';
 
 class App extends ConsumerWidget {
+  const App({super.key});
+
   // Use ConsumerWidget to access providers
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,7 +37,8 @@ class App extends ConsumerWidget {
       theme: AppTheme.lightTheme,
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.0), // Set the height of the AppBar
+          preferredSize:
+              const Size.fromHeight(60.0), // Set the height of the AppBar
           child: AppBar(
             backgroundColor: Colors.transparent, // Transparent background
             elevation: 0, // Remove shadow/elevation

@@ -6,7 +6,8 @@ class SearchBarTitle extends ConsumerWidget {
   final String title;
   final int targetPage;
 
-  SearchBarTitle({required this.title, required this.targetPage});
+  const SearchBarTitle(
+      {super.key, required this.title, required this.targetPage});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

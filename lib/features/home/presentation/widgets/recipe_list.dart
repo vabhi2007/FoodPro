@@ -8,8 +8,11 @@ class RecipeList extends StatelessWidget {
     {'name': 'Nachos', 'image': 'lib/assets/images/nachos.png'},
   ];
 
+  const RecipeList({super.key});
+
   @override
   Widget build(BuildContext context) {
+    const double size = 130.0;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -34,8 +37,8 @@ class RecipeList extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: 130.0,
-                        height: 130.0,
+                        width: size,
+                        height: size,
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
@@ -48,8 +51,8 @@ class RecipeList extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 130.0,
-                        height: 130.0,
+                        width: size,
+                        height: size,
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
@@ -58,11 +61,9 @@ class RecipeList extends StatelessWidget {
                           gradient: LinearGradient(
                             colors: [
                               Colors.black.withOpacity(0.8),
-                              Colors.black.withOpacity(0.4),
-                              Colors.transparent,
-                              Colors.transparent,
                               Colors.transparent,
                             ],
+                            stops: const [0.0, 0.9],
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
                           ),
@@ -71,7 +72,7 @@ class RecipeList extends StatelessWidget {
                       Positioned.fill(
                         child: Align(
                           alignment: const Alignment(0, 0.6),
-                          child: Container(
+                          child: SizedBox(
                             width: 70, // Set the maximum width for the text
                             child: Text(
                               recipe['name']!,

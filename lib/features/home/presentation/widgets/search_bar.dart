@@ -3,8 +3,9 @@ import 'package:foodpro/core/utils/app_theme.dart';
 
 class HomeSearchBar extends StatelessWidget {
   final String prompt;
-  HomeSearchBar({required this.prompt});
+  const HomeSearchBar({super.key, required this.prompt});
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
